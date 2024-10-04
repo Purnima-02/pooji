@@ -1,0 +1,35 @@
+{% extends 'DsaDashboard.html' %}
+
+{% block content1 %}
+
+
+
+
+    
+
+<form action="" method="post">
+    {% for item in data %}
+
+
+    <label for="dsa_registerid" class="form-label">Application Id:</label>
+    <input type="text" name="dsa_registerid" id="dsa_registerid" value="{{item.dsa_registerid}}" class="form-control" readonly>
+
+    <label for="dsa_name" class="form-label">DSA Name:</label>
+    <input type="text" name="dsa_name" id="dsa_name" value="{{item.dsa_name}}" class="form-control">
+
+    {% if edited %}
+    <button type="submit" class="btn btn-success mt-3">Edited</button>
+
+    {% else  %}
+
+    <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+        
+    {% endif %}
+
+</form>
+
+{% endfor %}
+
+{% endblock %}
+
